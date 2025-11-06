@@ -11,16 +11,26 @@ export default function Index() {
   function addGoalHandler() {
     setCourseGoals(
       (currentCourseGoals) => [...currentCourseGoals, enteredGoalText]);
+    setEntededGoalText('');
   }
   return (
     <View style={ styles.appContainer }>
       <View style={styles.inputContainer}>
         <TextInput placeholder="Your course goal!" 
-          style={ styles.textInput } onChangeText={goalInputHandler}/>
+          style={ styles.textInput } 
+          onChangeText={goalInputHandler}
+          value={enteredGoalText} />
         <Button title="Add Goal" onPress={addGoalHandler}/>
       </View>
       <View style={ styles.goalsContainer}>
-          { courseGoals.map((goal) => <Text style={styles.goalContainer} key={goal}>{goal}</Text>)  }
+          { courseGoals.map((goal) => (
+            //To Avoid IOS issue, we're passing the stile to a View to show border radius
+            <View style={styles.goalItem} key={goal}> 
+              <Text style={styles.goalText}>
+                {goal}
+              </Text>  
+            </View>
+          ))}
         </View>
     </View>
   );
@@ -45,15 +55,20 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     width: '70%',
-    padding: 6
+    padding: 8,
+    marginRight: 8
   },
   goalsContainer: {
     flex: 5
   },
-  goalContainer: {
-    padding: 7,
-    marginBottom: 3, 
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
+  goalItem: {
+    margin: 8,
+    borderRadius: 6,
+    padding: 8,
+    backgroundColor: '#5e0acc',
+    color: '#fff'
+  }, 
+  goalText: {
+    color: "#fff"
   }
 })
