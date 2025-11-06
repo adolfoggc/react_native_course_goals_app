@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 export default function Index() {
   const [enteredGoalText, setEntededGoalText] = useState('');
   const [courseGoals, setCourseGoals] = useState<string[]>([]);
@@ -23,16 +23,18 @@ export default function Index() {
         <Button title="Add Goal" onPress={addGoalHandler}/>
       </View>
       <View style={ styles.goalsContainer}>
-          <ScrollView alwaysBounceVertical={false}>
-            { courseGoals.map((goal) => (
-              //To Avoid IOS issue, we're passing the stile to a View to show border radius
-              <View style={styles.goalItem} key={goal}> 
-                <Text style={styles.goalText}>
-                  {goal}
-                </Text>  
-              </View>
-            ))}
-          </ScrollView>
+          <FlatList 
+            alwaysBounceVertical={false} 
+            data={courseGoals} 
+            renderItem={(itemData) => {
+              return (
+                <View style={styles.goalItem} key={itemData.index}> 
+                  <Text style={styles.goalText}>
+                    {itemData.item}
+                  </Text>  
+                </View>
+            )}}> 
+          </FlatList>
         </View>
     </View>
   );
