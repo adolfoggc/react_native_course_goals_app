@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, TextInput, View } from 'react-native';
-import Stylesheet from '../app-example/components/Stylesheet';
+import Stylesheet from '../components/Stylesheet';
 
 function GoalInput( props: propsInterface ){
   const styles = Stylesheet();

@@ -30,12 +30,12 @@ function Stylesheet() {
       goalItem: {
         margin: 8,
         borderRadius: 6,
-        padding: 8,
         backgroundColor: '#5e0acc',
         color: '#fff'
       }, 
       goalText: {
-        color: "#fff"
+        color: "#fff",
+        padding: 8
       }
     })
   )

@@ -11,7 +11,7 @@ function GoalItem( props: propsInterface ){
   }
   
   return (
-    <Pressable onPress={ deleteItemHandler }>
+    <Pressable onPress={ deleteItemHandler } android_ripple={{color: '#270850ff'}}>
       <View style={styles.goalItem} key={props.index}> 
         <Text style={styles.goalText}>
           {props.text}
