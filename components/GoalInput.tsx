@@ -22,7 +22,14 @@ function GoalInput( props: propsInterface ){
           style={ styles.textInput } 
           onChangeText={goalInputHandler}
           value={enteredGoalText} />
-        <Button title="Add Goal" onPress={addGoalHandler}/>
+        <View style={styles.buttonContainer}>
+          <View style={styles.button}>
+            <Button title="Add Goal" onPress={addGoalHandler}/>
+          </View>
+          <View style={styles.button}>
+            <Button title="Cancel" onPress={addGoalHandler}/>
+          </View>
+        </View>
       </View>
     </Modal>
   )
