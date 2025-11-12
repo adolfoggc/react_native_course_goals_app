@@ -12,10 +12,8 @@ function Stylesheet() {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 24,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ccc',
-        padding: 16
+        padding: 16,
+        backgroundColor: '#311b6b'
       },
       textInput: {
         borderWidth: 1,
@@ -43,6 +41,11 @@ function Stylesheet() {
       button: {
         width: 100,
         marginHorizontal: 8
+      },
+      image: {
+        width: 100,
+        height: 100,
+        margin: 20
       }
     })
   )
