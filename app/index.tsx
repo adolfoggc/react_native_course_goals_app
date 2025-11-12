@@ -19,6 +19,10 @@ export default function Index() {
       (currentCourseGoals) => [...currentCourseGoals, enteredGoalText]);
   }
 
+  function endAddGoalHandler() {
+    setModalIsVisible(false);
+  }
+
   function deleteGoalHandler(id: number){
     setCourseGoals(currentCourseGoals => {
       return currentCourseGoals.filter(
@@ -30,7 +34,7 @@ export default function Index() {
   return (
     <View style={ styles.appContainer }>
       <Button title='Add New Goal' color='#5e0acc' onPress={startAddGoalHandler}/>
-      <GoalInput onAddGoal={addGoalHandler} visible={modalIsVisible}/>
+      <GoalInput onAddGoal={addGoalHandler} visible={modalIsVisible} onCancel={endAddGoalHandler}/>
       <View style={ styles.goalsContainer}>
           <FlatList 
             alwaysBounceVertical={false} 

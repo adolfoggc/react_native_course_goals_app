@@ -13,6 +13,7 @@ function GoalInput( props: propsInterface ){
   function addGoalHandler() {
     props.onAddGoal(enteredGoalText);
     setEntededGoalText('');
+    props.onCancel();
   }
 
   return (
@@ -27,7 +28,7 @@ function GoalInput( props: propsInterface ){
             <Button title="Add Goal" onPress={addGoalHandler}/>
           </View>
           <View style={styles.button}>
-            <Button title="Cancel" onPress={addGoalHandler}/>
+            <Button title="Cancel" onPress={props.onCancel}/>
           </View>
         </View>
       </View>
@@ -37,7 +38,8 @@ function GoalInput( props: propsInterface ){
 
 interface propsInterface {
   onAddGoal: (props: string) => void;
-  visible: boolean
+  visible: boolean,
+  onCancel: () => void
 }
 
 export default GoalInput;
