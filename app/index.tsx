@@ -14,6 +14,14 @@ export default function Index() {
       (currentCourseGoals) => [...currentCourseGoals, enteredGoalText]);
   }
 
+  function deleteGoalHandler(id: number){
+    setCourseGoals(currentCourseGoals => {
+      return currentCourseGoals.filter(
+        (goal, index) => index !== id
+      ); 
+    })
+  }
+
   return (
     <View style={ styles.appContainer }>
       <GoalInput onAddGoal={addGoalHandler}/>
@@ -22,7 +30,7 @@ export default function Index() {
             alwaysBounceVertical={false} 
             data={courseGoals} 
             renderItem={(itemData) => {
-              return <GoalItem text={itemData.item} index={itemData.index}/>
+              return <GoalItem text={itemData.item} index={itemData.index} onDeleteItem={deleteGoalHandler}/>
             }}> 
           </FlatList>
         </View>
