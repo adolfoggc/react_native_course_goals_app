@@ -1,8 +1,8 @@
-import GoalInput from "@/app-example/components/GoalInput";
-import GoalItem from "@/app-example/components/GoalItem";
+import GoalInput from "@/components/GoalInput";
+import GoalItem from "@/components/GoalItem";
 import { useState } from 'react';
 import { FlatList, View } from "react-native";
-import Stylesheet from '../app-example/components/Stylesheet';
+import Stylesheet from '../components/Stylesheet';
 
 export default function Index() {
   const styles = Stylesheet();
