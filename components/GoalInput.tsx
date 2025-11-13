@@ -15,8 +15,9 @@ function GoalInput( props: propsInterface ){
     setEntededGoalText('');
     props.onCancel();
   }
-
+  
   return (
+    //maybe add a possibility to describe the user as left or right handed and change the button order
     <Modal visible={props.visible} animationType='slide'>
       <View style={styles.inputContainer}>
         <Image source={require('../assets/images/goal.png')} style={styles.image}/>
@@ -26,10 +27,10 @@ function GoalInput( props: propsInterface ){
           value={enteredGoalText} />
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
-            <Button title="Add Goal" onPress={addGoalHandler}/>
+            <Button title="Cancel" onPress={props.onCancel}  color="#f31282"/>
           </View>
           <View style={styles.button}>
-            <Button title="Cancel" onPress={props.onCancel}/>
+            <Button title="Add Goal" onPress={addGoalHandler} color="#5e0acc"/>
           </View>
         </View>
       </View>

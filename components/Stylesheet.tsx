@@ -1,12 +1,14 @@
 import { StyleSheet } from 'react-native';
 
 function Stylesheet() {
+  //strangely, defining the color on app.json does not work, so I defined it on appContainer
   return (
     StyleSheet.create({
       appContainer: {
         paddingTop: 50,
         paddingHorizontal: 16,
-        flex: 1
+        flex: 1,
+        backgroundColor: '#1e085a'
       },
       inputContainer: {
         flex: 1,
@@ -17,9 +19,12 @@ function Stylesheet() {
       },
       textInput: {
         borderWidth: 1,
-        borderColor: '#ccc',
+        borderColor: '#e4d0ff',
+        backgroundColor: '#e4d0ff',
+        color: '#120438',
+        borderRadius: 6,
         width: '100%',
-        padding: 8
+        padding: 16
       },
       goalsContainer: {
         flex: 5
